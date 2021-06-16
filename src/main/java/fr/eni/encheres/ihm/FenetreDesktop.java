@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class FenetreDesktop extends JFrame {
         public FenetreDesktop() {
-            this.setSize(new Dimension(650, 750));
+            this.setSize(new Dimension(700, 750));
             JLabel entete = new JLabel();
             entete.setText("ENI-ENCHERES");
             this.add(entete);
