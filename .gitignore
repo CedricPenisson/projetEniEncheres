@@ -7,3 +7,7 @@
 /gradlew
 /gradlew.bat
 /settings.gradle
+/META-INF
+/web
+/src/main/webapp
+/src/main/resources
