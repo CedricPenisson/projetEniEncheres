@@ -1,4 +1,6 @@
-package fr.eni.encheres;
+package fr.eni.encheres.servlets;
+
+import fr.eni.encheres.dal.jdbc.ConnectionProvider;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -12,13 +14,18 @@ public class ServletTestConnexion extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
         Connection con = null;
         try {
             con = ConnectionProvider.getConnection();
+            con.close();
             System.out.println("Got it!");
         } catch (SQLException e) {
             throw new Error("Problem", e);
+        }
+        try {
+            con.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
     }
 
