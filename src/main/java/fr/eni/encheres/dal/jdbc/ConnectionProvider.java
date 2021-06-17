@@ -1,4 +1,4 @@
-package fr.eni.encheres;
+package fr.eni.encheres.dal.jdbc;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -7,9 +7,8 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-abstract class ConnectionProvider {
+public abstract class ConnectionProvider {
     private static DataSource dataSource;
-
     /**
      * Au chargement de la classe, la DataSource est recherchée dans l'arbre JNDI
      */
@@ -24,7 +23,6 @@ abstract class ConnectionProvider {
             throw new RuntimeException("Impossible d'accéder à la base de données");
         }
     }
-
     /**
      * Cette méthode retourne une connection opérationnelle issue du pool de connexion
      * vers la base de données.
